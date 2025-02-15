@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Wanna Go Out With Me?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Indie Flower', cursive;
+            text-align: center;
+            background-color: #ffecb3;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+        }
+        .header_text {
+            font-size: 28px;
+        }
+        .gif_container img {
+            width: 200px;
+            height: auto;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+        #yesButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noButton {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+            transition: left 0.2s, top 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="header_text">Do you wanna go out with me?</h1>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute Capoo GIF">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function nextPage() {
+            alert("Yay! Let's go out! ❤️"); 
+        }
+
+        function moveButton() {
+            let button = document.getElementById("noButton");
+            let maxX = window.innerWidth - button.offsetWidth;
+            let maxY = window.innerHeight - button.offsetHeight;
+            
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            button.style.position = "absolute";
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+    </script>
+
+</body>
+</html>
+
+
